@@ -1,13 +1,24 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="de">
     <head>
+	<meta charset="utf-8">
+	<title>Workadventure</title>
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
         <style>
+	    body {
+		background: url(IMG_20210821_095822.jpg) no-repeat center;
+		background-size: cover;
+	    }
             .useful-width{
                 /* center the html elements */
                 max-width: 800px;
                 margin-left: auto;
                 margin-right: auto;
+	    }
+	    .nes-container {
+		background-color: white;
             }
         </style>
         <script>
@@ -17,44 +28,71 @@
                 if (path.endsWith('index.html')) {
                     path = path.substr(path, path.length - 'index.html'.length);
                 }
-                const instanceId = Math.random().toString(36).substring(2, 15);
+                const instanceId = '3098'; 
+		const instanceRandom = Math.random().toString(36).substring(2, 15);
                 const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}map.json`;
                 document.getElementById('mapLink').href = url;
-                document.getElementById('mapLink2').href = url;
-                document.getElementById('mapLink').innerText = url;
 
+		/*
                 const mapUrl = window.location.protocol+'//'+window.location.host+path+'map.json';
                 document.getElementById('mapUrl').innerText = mapUrl;
 
                 const gettingStartedLink = 'https://workadventu.re/getting-started?name=Map&mapUrl='+mapUrl;
                 document.getElementById('gettingStartedLink').href = gettingStartedLink;
-
+		*/
             };
         </script>
     </head>
     <body>
         <div class="useful-width">
-            <div style="text-align: center; margin-top: 3rem">
-                <img src="https://workadventu.re/img/logo.png" alt=""/>
-            </div>
             <div class="nes-container with-title is-centered" style="margin-top: 3rem">
-                <p class="title">WorkAdventure map</p>
-                <p>This website contains a map for <a href="https://workadventu.re">Workadventu.re</a>.</p>
+                <p>
+			<h2>Code-Welt für Buchsee F1</h2>
+			Hier befinden sich virtuelle Umgebungen für <a href="https://workadventu.re">Workadventu.re</a>,
+			gestaltet und gepflegt von <a href="mailto:oleg@schoolofdata.ch">Oleg Lavrovsky</a>.
+			Eine kurze Anleitung steht unten. Bitte meldet euch bei Fragen.
+		</p>
+            </div>
+<!--
+            <div class="nes-container with-title is-centered" style="margin-top: 1rem">
+                <p class="title">Single Player</p>
+                <p>
+			Auf diese Karte können alle funktionen benutzt werden, aber im beschränktem Modus:
+			keine Daten werden gesammelt - und ihr könnt auch niemand anderen hier treffen.
+		</p>
+                <p><a id="mapLink" href="" class="nes-btn is-primary">Einzelspiel Starten</a></p>
+            </div>
+-->
+            <div class="nes-container with-title is-centered" style="margin-top: 1rem">
+                <p class="title">INSERT COIN</p>
+                <p>
+			Bitte lest sorgfältig die Bestimmungen
+			zum <a href="https://workadventu.re/privacy-policy" target="_blank">Datenschutz</a> 
+			und <a href="https://workadventu.re/terms-of-use" target="_blank">Konditionen</a>
+			der Firmas aus Frankreich, die ihr implizit akzeptiert durch eure Benutzung diese Webseite.
+			Es ist Kostenlos, braucht keine Kontoangabe, und die Daten werden nur direkt an andere 
+			Benutzer*innen übermittelt. Aber als öffentliche Internet-Dienst kommt das trotzdem mit
+			gewissen Risiken und Verantwortlichkeiten.
+		</p>
+                <p><a id="mapLink" href="" class="nes-btn is-primary">Metaverse Starten</a></p>
             </div>
 
-            <div class="nes-container with-title is-centered" style="margin-top: 1rem">
-                <p class="title">Test this map</p>
-                <p>You can test this map at <a id="mapLink" href=""></a>.</p>
-                <p><a id="mapLink2" href="" class="nes-btn is-primary">Test this map</a></p>
-            </div>
+	    <div class="nes-container" style="margin-top:1rem">
+	    <center><h2>Kurzanleitung</h2></center>
+	    <b>Der Anfang</b>
+	 	<p>Wenn ihr die Website über den Link aufruft, werdet ihr aufgefordert, euren Namen einzugeben (eure Vornamen oder Spitzname) und eine Spielfigur auszuwählen. Beide Aktionen müssen durch Drücken der Enter-Taste (↵) bestätigt werden.</p>
+		<p>Ihr werdet als Nächstes aufgefordert, die Berechtigung für die Nutzung eures Webcams und Mikrofons zu erteilen - diese ist natürlich optional!</p>
+	    <b>Steuerung</b>
+		<p>Steuern könnt ihr, wie ihr es aus diversen Spielen gewohnt seid, mit den
+Tasten W (Hoch), A (Links), S (Runter) und D (Rechts), oder ganz einfach mit den Pfeiltasten. Durch
+Drücken der Shift-Taste könnt ihr schneller Laufen.</p>
+	    <b>Das Spielfeld</b>
+		<p>Das Spielfeld dient dazu, die Schule kennenzulernen. Einige Elemente geben euch auch einen Eindruck in das reale Schulgebäude bzw. das Schulleben.</p>
+	    <b>Weitere Informationen</b>
+	    	<p>Eine ausführliche Einleitung auf Deutsch kann auf der Webseite <a href="https://digitale-burg.de/static/workadventure/WorkAdventure_Deutsch.html" target="_blank">digitale-burg.de</a> gefunden werden.</p>
+		<br><small>Danke an das <a href="https://www.deutschhaus.de/workadventure/" target="_blank">Deutschhaus-Gymnasium</a> für diese Grundlagen.</small>
+	    </div>
 
-            <div class="nes-container with-title is-centered" style="margin-top: 1rem">
-                <p class="title">Happy with the result?</p>
-                <p>Register your room on Workadventu.re.</p>
-                <p><a id="gettingStartedLink" href="" class="nes-btn is-primary">Create a new room</a></p>
-                <p>or copy and paste the map URL in WorkAdventu.re's administration panel:</p>
-                <p><span id="mapUrl" style="color: gray" /></p>
-            </div>
         </div>
     </body>
 </html>
