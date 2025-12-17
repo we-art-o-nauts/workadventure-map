@@ -1,0 +1,160 @@
+{
+    "activeFile": "map.json",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "conference.tmj": {
+            "scale": 0.7879557291666667,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 383.90481698752376,
+                "y": 223.99735602743118
+            }
+        },
+        "conference.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "map.json": {
+            "scale": 0.189109375,
+            "selectedLayer": 13,
+            "viewCenter": {
+                "x": 1599.603404114682,
+                "y": 1599.6034041146822
+            }
+        },
+        "map.json#Terrain": {
+            "scaleInDock": 1
+        },
+        "map.json#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "map.json#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "map.json#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "map.json#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "map.json#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "office.tmj": {
+            "scale": 0.6100302419354838,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 495.8770552755516,
+                "y": 335.2292819961993
+            }
+        },
+        "office.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "office.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj": {
+            "scale": 0.1569,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1220.5226258763544,
+                "y": 595.9209687699172
+            }
+        },
+        "spiu.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "spiu.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        }
+    },
+    "map.lastUsedFormat": "json",
+    "openFiles": [
+        "map.json",
+        "spiu.tmj",
+        "conference.tmj"
+    ],
+    "project": "spiu.tiled-project",
+    "recentFiles": [
+        "conference.tmj",
+        "spiu.tmj",
+        "map.json"
+    ]
+}
