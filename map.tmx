@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="69" nextobjectid="22">
+ <editorsettings>
+  <export target="map.json" format="json"/>
+ </editorsettings>
+ <properties>
+  <property name="mapCopyright">Credits: WorkAdventure (https://WorkAdventu.re) 
+License: CC-BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)</property>
+  <property name="mapDescription" value="A perfect virtual office to get started with WorkAdventure!"/>
+  <property name="mapImage" value="office.png"/>
+  <property name="mapName" value="Office"/>
+  <property name="script" value="src/main.ts"/>
+ </properties>
+ <tileset firstgid="1" name="WA_Special_Zones" tilewidth="32" tileheight="32" tilecount="12" columns="6">
+  <image source="tilesets/WA_Special_Zones.png" width="192" height="64"/>
+  <tile id="2">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="13" name="WA_Miscellaneous" tilewidth="32" tileheight="32" tilecount="110" columns="10">
+  <image source="tilesets/WA_Miscellaneous.png" width="320" height="352"/>
+ </tileset>
+ <tileset firstgid="123" name="WA_Other_Furniture" tilewidth="32" tileheight="32" tilecount="156" columns="12">
+  <image source="tilesets/WA_Other_Furniture.png" width="384" height="416"/>
+ </tileset>
+ <tileset firstgid="279" name="WA_Seats" tilewidth="32" tileheight="32" tilecount="182" columns="13">
+  <image source="tilesets/WA_Seats.png" width="416" height="448"/>
+ </tileset>
+ <tileset firstgid="461" name="WA_Exterior" tilewidth="32" tileheight="32" tilecount="850" columns="25">
+  <image source="tilesets/WA_Exterior.png" width="800" height="1088"/>
+ </tileset>
+ <tileset firstgid="1311" name="WA_User_Interface" tilewidth="32" tileheight="32" tilecount="273" columns="13">
+  <image source="tilesets/WA_User_Interface.png" width="416" height="672"/>
+ </tileset>
+ <tileset firstgid="1584" name="Terrain" tilewidth="32" tileheight="32" tilecount="1024" columns="32">
+  <image source="src/assets/LPC_Terrain/terrain.png" width="1024" height="1024"/>
+  <tile id="469">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="470">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="471">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="501">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="503">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="533">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="534">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="535">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <wangsets>
+   <wangset name="Terrains" type="corner" tile="-1">
+    <wangcolor name="Dark Dirt" color="#ff0000" tile="100" probability="1"/>
+    <wangcolor name="Red Dirt" color="#00ff00" tile="103" probability="1"/>
+    <wangcolor name="Black Dirt" color="#0000ff" tile="106" probability="1"/>
+    <wangcolor name="Grey Dirt" color="#ff7700" tile="109" probability="1"/>
+    <wangcolor name="Lava" color="#00e9ff" tile="112" probability="1"/>
+    <wangcolor name="Hole" color="#ff00d8" tile="115" probability="1"/>
+    <wangcolor name="Red Hole" color="#ffff00" tile="118" probability="1"/>
+    <wangcolor name="Black Hole" color="#a000ff" tile="121" probability="1"/>
+    <wangcolor name="Water" color="#00ffa1" tile="124" probability="1"/>
+    <wangcolor name="Full Dirt" color="#ffa8a8" tile="537" probability="1"/>
+    <wangcolor name="Clean Dirt" color="#b4a8ff" tile="537" probability="1"/>
+    <wangcolor name="Trans Dirt" color="#96ffa7" tile="97" probability="1"/>
+    <wangcolor name="Grass" color="#8e7848" tile="289" probability="1"/>
+    <wangcolor name="Dark Grass" color="#5a5a5a" tile="295" probability="1"/>
+    <wangcolor name="Short Grass" color="#0e7a46" tile="298" probability="1"/>
+    <wangcolor name="Long Grass" color="#00000000" tile="301" probability="1"/>
+    <wangcolor name="Wheat" color="#b70d32" tile="304" probability="1"/>
+    <wangcolor name="Earth" color="#a35831" tile="676" probability="1"/>
+    <wangcolor name="Sand" color="#5d255a" tile="307" probability="1"/>
+    <wangcolor name="Sand Water" color="#581705" tile="310" probability="1"/>
+    <wangcolor name="Snow" color="#d45ee9" tile="499" probability="1"/>
+    <wangcolor name="Snow Water" color="#cdb2ab" tile="662" probability="1"/>
+    <wangcolor name="Snow Ice" color="#b49bc6" tile="502" probability="1"/>
+    <wangcolor name="Ice" color="#0e1154" tile="496" probability="1"/>
+    <wangcolor name="Brick Road" color="#417482" tile="491" probability="1"/>
+    <wangcolor name="Sewer" color="#dc3d21" tile="484" probability="1"/>
+    <wangcolor name="Sewer Water" color="#e97087" tile="481" probability="1"/>
+    <wangtile tileid="1" wangid="0,12,0,0,0,12,0,12"/>
+    <wangtile tileid="2" wangid="0,12,0,12,0,0,0,12"/>
+    <wangtile tileid="4" wangid="0,1,0,0,0,1,0,1"/>
+    <wangtile tileid="5" wangid="0,1,0,1,0,0,0,1"/>
+    <wangtile tileid="7" wangid="0,2,0,0,0,2,0,2"/>
+    <wangtile tileid="8" wangid="0,2,0,2,0,0,0,2"/>
+    <wangtile tileid="13" wangid="0,4,0,0,0,4,0,4"/>
+    <wangtile tileid="14" wangid="0,4,0,4,0,0,0,4"/>
+    <wangtile tileid="16" wangid="0,5,0,0,0,5,0,5"/>
+    <wangtile tileid="17" wangid="0,5,0,5,0,0,0,5"/>
+    <wangtile tileid="19" wangid="0,6,0,0,0,6,0,6"/>
+    <wangtile tileid="20" wangid="0,6,0,6,0,0,0,6"/>
+    <wangtile tileid="22" wangid="0,7,0,0,0,7,0,7"/>
+    <wangtile tileid="23" wangid="0,7,0,7,0,0,0,7"/>
+    <wangtile tileid="25" wangid="0,8,0,0,0,8,0,8"/>
+    <wangtile tileid="26" wangid="0,8,0,8,0,0,0,8"/>
+    <wangtile tileid="28" wangid="0,9,0,0,0,9,0,9"/>
+    <wangtile tileid="29" wangid="0,9,0,9,0,0,0,9"/>
+    <wangtile tileid="33" wangid="0,0,0,12,0,12,0,12"/>
+    <wangtile tileid="34" wangid="0,12,0,12,0,12,0,0"/>
+    <wangtile tileid="36" wangid="0,0,0,1,0,1,0,1"/>
+    <wangtile tileid="37" wangid="0,1,0,1,0,1,0,0"/>
+    <wangtile tileid="39" wangid="0,0,0,2,0,2,0,2"/>
+    <wangtile tileid="40" wangid="0,2,0,2,0,2,0,0"/>
+    <wangtile tileid="45" wangid="0,0,0,4,0,4,0,4"/>
+    <wangtile tileid="46" wangid="0,4,0,4,0,4,0,0"/>
+    <wangtile tileid="48" wangid="0,0,0,5,0,5,0,5"/>
+    <wangtile tileid="49" wangid="0,5,0,5,0,5,0,0"/>
+    <wangtile tileid="51" wangid="0,0,0,6,0,6,0,6"/>
+    <wangtile tileid="52" wangid="0,6,0,6,0,6,0,0"/>
+    <wangtile tileid="54" wangid="0,0,0,7,0,7,0,7"/>
+    <wangtile tileid="55" wangid="0,7,0,7,0,7,0,0"/>
+    <wangtile tileid="57" wangid="0,0,0,8,0,8,0,8"/>
+    <wangtile tileid="58" wangid="0,8,0,8,0,8,0,0"/>
+    <wangtile tileid="60" wangid="0,0,0,9,0,9,0,9"/>
+    <wangtile tileid="61" wangid="0,9,0,9,0,9,0,0"/>
+    <wangtile tileid="64" wangid="0,0,0,12,0,0,0,0"/>
+    <wangtile tileid="65" wangid="0,0,0,12,0,12,0,0"/>
+    <wangtile tileid="66" wangid="0,0,0,0,0,12,0,0"/>
+    <wangtile tileid="67" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="68" wangid="0,0,0,1,0,1,0,0"/>
+    <wangtile tileid="69" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="70" wangid="0,0,0,2,0,0,0,0"/>
+    <wangtile tileid="71" wangid="0,0,0,2,0,2,0,0"/>
+    <wangtile tileid="72" wangid="0,0,0,0,0,2,0,0"/>
+    <wangtile tileid="73" wangid="0,0,0,3,0,0,0,0"/>
+    <wangtile tileid="74" wangid="0,0,0,3,0,3,0,0"/>
+    <wangtile tileid="75" wangid="0,0,0,0,0,3,0,0"/>
+    <wangtile tileid="76" wangid="0,0,0,4,0,0,0,0"/>
+    <wangtile tileid="77" wangid="0,0,0,4,0,4,0,0"/>
+    <wangtile tileid="78" wangid="0,0,0,0,0,4,0,0"/>
+    <wangtile tileid="79" wangid="0,0,0,5,0,0,0,0"/>
+    <wangtile tileid="80" wangid="0,0,0,5,0,5,0,0"/>
+    <wangtile tileid="81" wangid="0,0,0,0,0,5,0,0"/>
+    <wangtile tileid="82" wangid="0,0,0,6,0,0,0,0"/>
+    <wangtile tileid="83" wangid="0,0,0,6,0,6,0,0"/>
+    <wangtile tileid="84" wangid="0,0,0,0,0,6,0,0"/>
+    <wangtile tileid="85" wangid="0,0,0,7,0,0,0,0"/>
+    <wangtile tileid="86" wangid="0,0,0,7,0,7,0,0"/>
+    <wangtile tileid="87" wangid="0,0,0,0,0,7,0,0"/>
+    <wangtile tileid="88" wangid="0,0,0,8,0,0,0,0"/>
+    <wangtile tileid="89" wangid="0,0,0,8,0,8,0,0"/>
+    <wangtile tileid="90" wangid="0,0,0,0,0,8,0,0"/>
+    <wangtile tileid="91" wangid="0,0,0,9,0,0,0,0"/>
+    <wangtile tileid="92" wangid="0,0,0,9,0,9,0,0"/>
+    <wangtile tileid="93" wangid="0,0,0,0,0,9,0,0"/>
+    <wangtile tileid="96" wangid="0,12,0,12,0,0,0,0"/>
+    <wangtile tileid="97" wangid="0,12,0,12,0,12,0,12"/>
+    <wangtile tileid="98" wangid="0,0,0,0,0,12,0,12"/>
+    <wangtile tileid="99" wangid="0,1,0,1,0,0,0,0"/>
+    <wangtile tileid="100" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="101" wangid="0,0,0,0,0,1,0,1"/>
+    <wangtile tileid="102" wangid="0,2,0,2,0,0,0,0"/>
+    <wangtile tileid="103" wangid="0,2,0,2,0,2,0,2"/>
+    <wangtile tileid="104" wangid="0,0,0,0,0,2,0,2"/>
+    <wangtile tileid="105" wangid="0,3,0,3,0,0,0,0"/>
+    <wangtile tileid="106" wangid="0,3,0,3,0,3,0,3"/>
+    <wangtile tileid="107" wangid="0,0,0,0,0,3,0,3"/>
+    <wangtile tileid="108" wangid="0,4,0,4,0,0,0,0"/>
+    <wangtile tileid="110" wangid="0,0,0,0,0,4,0,4"/>
+    <wangtile tileid="111" wangid="0,5,0,5,0,0,0,0"/>
+    <wangtile tileid="112" wangid="0,5,0,5,0,5,0,5"/>
+    <wangtile tileid="113" wangid="0,0,0,0,0,5,0,5"/>
+    <wangtile tileid="114" wangid="0,6,0,6,0,0,0,0"/>
+    <wangtile tileid="115" wangid="0,6,0,6,0,6,0,6"/>
+    <wangtile tileid="116" wangid="0,0,0,0,0,6,0,6"/>
+    <wangtile tileid="117" wangid="0,7,0,7,0,0,0,0"/>
+    <wangtile tileid="118" wangid="0,7,0,7,0,7,0,7"/>
+    <wangtile tileid="119" wangid="0,0,0,0,0,7,0,7"/>
+    <wangtile tileid="120" wangid="0,8,0,8,0,0,0,0"/>
+    <wangtile tileid="122" wangid="0,0,0,0,0,8,0,8"/>
+    <wangtile tileid="123" wangid="0,9,0,9,0,0,0,0"/>
+    <wangtile tileid="125" wangid="0,0,0,0,0,9,0,9"/>
+    <wangtile tileid="128" wangid="0,12,0,0,0,0,0,0"/>
+    <wangtile tileid="129" wangid="0,12,0,0,0,0,0,12"/>
+    <wangtile tileid="130" wangid="0,0,0,0,0,0,0,12"/>
+    <wangtile tileid="131" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="132" wangid="0,1,0,0,0,0,0,1"/>
+    <wangtile tileid="133" wangid="0,0,0,0,0,0,0,1"/>
+    <wangtile tileid="134" wangid="0,2,0,0,0,0,0,0"/>
+    <wangtile tileid="135" wangid="0,2,0,0,0,0,0,2"/>
+    <wangtile tileid="136" wangid="0,0,0,0,0,0,0,2"/>
+    <wangtile tileid="137" wangid="0,3,0,0,0,0,0,0"/>
+    <wangtile tileid="138" wangid="0,3,0,0,0,0,0,3"/>
+    <wangtile tileid="139" wangid="0,0,0,0,0,0,0,3"/>
+    <wangtile tileid="140" wangid="0,4,0,0,0,0,0,0"/>
+    <wangtile tileid="141" wangid="0,4,0,0,0,0,0,4"/>
+    <wangtile tileid="142" wangid="0,0,0,0,0,0,0,4"/>
+    <wangtile tileid="143" wangid="0,5,0,0,0,0,0,0"/>
+    <wangtile tileid="144" wangid="0,5,0,0,0,0,0,5"/>
+    <wangtile tileid="145" wangid="0,0,0,0,0,0,0,5"/>
+    <wangtile tileid="146" wangid="0,6,0,0,0,0,0,0"/>
+    <wangtile tileid="147" wangid="0,6,0,0,0,0,0,6"/>
+    <wangtile tileid="148" wangid="0,0,0,0,0,0,0,6"/>
+    <wangtile tileid="149" wangid="0,7,0,0,0,0,0,0"/>
+    <wangtile tileid="150" wangid="0,7,0,0,0,0,0,7"/>
+    <wangtile tileid="151" wangid="0,0,0,0,0,0,0,7"/>
+    <wangtile tileid="152" wangid="0,8,0,0,0,0,0,0"/>
+    <wangtile tileid="153" wangid="0,8,0,0,0,0,0,8"/>
+    <wangtile tileid="154" wangid="0,0,0,0,0,0,0,8"/>
+    <wangtile tileid="155" wangid="0,9,0,0,0,0,0,0"/>
+    <wangtile tileid="156" wangid="0,9,0,0,0,0,0,9"/>
+    <wangtile tileid="157" wangid="0,0,0,0,0,0,0,9"/>
+    <wangtile tileid="160" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="161" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="162" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="163" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="164" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="165" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="166" wangid="0,2,0,2,0,2,0,2"/>
+    <wangtile tileid="167" wangid="0,2,0,2,0,2,0,2"/>
+    <wangtile tileid="168" wangid="0,2,0,2,0,2,0,2"/>
+    <wangtile tileid="169" wangid="0,3,0,3,0,3,0,3"/>
+    <wangtile tileid="170" wangid="0,3,0,3,0,3,0,3"/>
+    <wangtile tileid="171" wangid="0,3,0,3,0,3,0,3"/>
+    <wangtile tileid="172" wangid="0,4,0,4,0,4,0,4"/>
+    <wangtile tileid="173" wangid="0,4,0,4,0,4,0,4"/>
+    <wangtile tileid="174" wangid="0,4,0,4,0,4,0,4"/>
+    <wangtile tileid="175" wangid="0,5,0,5,0,5,0,5"/>
+    <wangtile tileid="176" wangid="0,5,0,5,0,5,0,5"/>
+    <wangtile tileid="177" wangid="0,5,0,5,0,5,0,5"/>
+    <wangtile tileid="184" wangid="0,8,0,8,0,8,0,8"/>
+    <wangtile tileid="185" wangid="0,8,0,8,0,8,0,8"/>
+    <wangtile tileid="186" wangid="0,8,0,8,0,8,0,8"/>
+    <wangtile tileid="187" wangid="0,9,0,9,0,9,0,9"/>
+    <wangtile tileid="188" wangid="0,9,0,9,0,9,0,9"/>
+    <wangtile tileid="189" wangid="0,9,0,9,0,9,0,9"/>
+    <wangtile tileid="193" wangid="0,13,0,0,0,13,0,13"/>
+    <wangtile tileid="194" wangid="0,13,0,13,0,0,0,13"/>
+    <wangtile tileid="196" wangid="0,13,0,0,0,13,0,13"/>
+    <wangtile tileid="197" wangid="0,13,0,13,0,0,0,13"/>
+    <wangtile tileid="199" wangid="0,14,0,0,0,14,0,14"/>
+    <wangtile tileid="200" wangid="0,14,0,14,0,0,0,14"/>
+    <wangtile tileid="202" wangid="0,15,0,0,0,15,0,15"/>
+    <wangtile tileid="203" wangid="0,15,0,15,0,0,0,15"/>
+    <wangtile tileid="205" wangid="0,16,0,0,0,16,0,16"/>
+    <wangtile tileid="206" wangid="0,16,0,16,0,0,0,16"/>
+    <wangtile tileid="208" wangid="0,17,0,0,0,17,0,17"/>
+    <wangtile tileid="209" wangid="0,17,0,17,0,0,0,17"/>
+    <wangtile tileid="211" wangid="0,19,0,0,0,19,0,19"/>
+    <wangtile tileid="212" wangid="0,19,0,19,0,0,0,19"/>
+    <wangtile tileid="214" wangid="0,20,0,0,0,20,0,20"/>
+    <wangtile tileid="215" wangid="0,20,0,20,0,0,0,20"/>
+    <wangtile tileid="225" wangid="0,0,0,13,0,13,0,13"/>
+    <wangtile tileid="226" wangid="0,13,0,13,0,13,0,0"/>
+    <wangtile tileid="228" wangid="0,0,0,13,0,13,0,13"/>
+    <wangtile tileid="229" wangid="0,13,0,13,0,13,0,0"/>
+    <wangtile tileid="231" wangid="0,0,0,14,0,14,0,14"/>
+    <wangtile tileid="232" wangid="0,14,0,14,0,14,0,0"/>
+    <wangtile tileid="234" wangid="0,0,0,15,0,15,0,15"/>
+    <wangtile tileid="235" wangid="0,15,0,15,0,15,0,0"/>
+    <wangtile tileid="237" wangid="0,0,0,16,0,16,0,16"/>
+    <wangtile tileid="238" wangid="0,16,0,16,0,16,0,0"/>
+    <wangtile tileid="240" wangid="0,0,0,17,0,17,0,17"/>
+    <wangtile tileid="241" wangid="0,17,0,17,0,17,0,0"/>
+    <wangtile tileid="243" wangid="0,0,0,19,0,19,0,19"/>
+    <wangtile tileid="244" wangid="0,19,0,19,0,19,0,0"/>
+    <wangtile tileid="246" wangid="0,0,0,20,0,20,0,20"/>
+    <wangtile tileid="247" wangid="0,20,0,20,0,20,0,0"/>
+    <wangtile tileid="256" wangid="0,0,0,13,0,0,0,0"/>
+    <wangtile tileid="257" wangid="0,0,0,13,0,13,0,0"/>
+    <wangtile tileid="258" wangid="0,0,0,0,0,13,0,0"/>
+    <wangtile tileid="259" wangid="0,0,0,13,0,0,0,0"/>
+    <wangtile tileid="260" wangid="0,0,0,13,0,13,0,0"/>
+    <wangtile tileid="261" wangid="0,0,0,0,0,13,0,0"/>
+    <wangtile tileid="262" wangid="0,0,0,14,0,0,0,0"/>
+    <wangtile tileid="263" wangid="0,0,0,14,0,14,0,0"/>
+    <wangtile tileid="264" wangid="0,0,0,0,0,14,0,0"/>
+    <wangtile tileid="265" wangid="0,0,0,15,0,0,0,0"/>
+    <wangtile tileid="266" wangid="0,0,0,15,0,15,0,0"/>
+    <wangtile tileid="267" wangid="0,0,0,0,0,15,0,0"/>
+    <wangtile tileid="268" wangid="0,0,0,16,0,0,0,0"/>
+    <wangtile tileid="269" wangid="0,0,0,16,0,16,0,0"/>
+    <wangtile tileid="270" wangid="0,0,0,0,0,16,0,0"/>
+    <wangtile tileid="271" wangid="0,0,0,17,0,0,0,0"/>
+    <wangtile tileid="272" wangid="0,0,0,17,0,17,0,0"/>
+    <wangtile tileid="273" wangid="0,0,0,0,0,17,0,0"/>
+    <wangtile tileid="274" wangid="0,0,0,19,0,0,0,0"/>
+    <wangtile tileid="275" wangid="0,0,0,19,0,19,0,0"/>
+    <wangtile tileid="276" wangid="0,0,0,0,0,19,0,0"/>
+    <wangtile tileid="277" wangid="0,0,0,20,0,0,0,0"/>
+    <wangtile tileid="278" wangid="0,0,0,20,0,20,0,0"/>
+    <wangtile tileid="279" wangid="0,0,0,0,0,20,0,0"/>
+    <wangtile tileid="288" wangid="0,13,0,13,0,0,0,0"/>
+    <wangtile tileid="290" wangid="0,0,0,0,0,13,0,13"/>
+    <wangtile tileid="291" wangid="0,13,0,13,0,0,0,0"/>
+    <wangtile tileid="292" wangid="0,13,0,13,0,13,0,13"/>
+    <wangtile tileid="293" wangid="0,0,0,0,0,13,0,13"/>
+    <wangtile tileid="294" wangid="0,14,0,14,0,0,0,0"/>
+    <wangtile tileid="295" wangid="0,14,0,14,0,14,0,14"/>
+    <wangtile tileid="296" wangid="0,0,0,0,0,14,0,14"/>
+    <wangtile tileid="297" wangid="0,15,0,15,0,0,0,0"/>
+    <wangtile tileid="298" wangid="0,15,0,15,0,15,0,15"/>
+    <wangtile tileid="299" wangid="0,0,0,0,0,15,0,15"/>
+    <wangtile tileid="300" wangid="0,16,0,16,0,0,0,0"/>
+    <wangtile tileid="301" wangid="0,16,0,16,0,16,0,16"/>
+    <wangtile tileid="302" wangid="0,0,0,0,0,16,0,16"/>
+    <wangtile tileid="303" wangid="0,17,0,17,0,0,0,0"/>
+    <wangtile tileid="304" wangid="0,17,0,17,0,17,0,17"/>
+    <wangtile tileid="305" wangid="0,0,0,0,0,17,0,17"/>
+    <wangtile tileid="306" wangid="0,19,0,19,0,0,0,0"/>
+    <wangtile tileid="307" wangid="0,19,0,19,0,19,0,19"/>
+    <wangtile tileid="308" wangid="0,0,0,0,0,19,0,19"/>
+    <wangtile tileid="309" wangid="0,20,0,20,0,0,0,0"/>
+    <wangtile tileid="310" wangid="0,20,0,20,0,20,0,20"/>
+    <wangtile tileid="311" wangid="0,0,0,0,0,20,0,20"/>
+    <wangtile tileid="320" wangid="0,13,0,0,0,0,0,0"/>
+    <wangtile tileid="321" wangid="0,13,0,0,0,0,0,13"/>
+    <wangtile tileid="322" wangid="0,0,0,0,0,0,0,13"/>
+    <wangtile tileid="323" wangid="0,13,0,0,0,0,0,0"/>
+    <wangtile tileid="324" wangid="0,13,0,0,0,0,0,13"/>
+    <wangtile tileid="325" wangid="0,0,0,0,0,0,0,13"/>
+    <wangtile tileid="326" wangid="0,14,0,0,0,0,0,0"/>
+    <wangtile tileid="327" wangid="0,14,0,0,0,0,0,14"/>
+    <wangtile tileid="328" wangid="0,0,0,0,0,0,0,14"/>
+    <wangtile tileid="329" wangid="0,15,0,0,0,0,0,0"/>
+    <wangtile tileid="330" wangid="0,15,0,0,0,0,0,15"/>
+    <wangtile tileid="331" wangid="0,0,0,0,0,0,0,15"/>
+    <wangtile tileid="332" wangid="0,16,0,0,0,0,0,0"/>
+    <wangtile tileid="333" wangid="0,16,0,0,0,0,0,16"/>
+    <wangtile tileid="334" wangid="0,0,0,0,0,0,0,16"/>
+    <wangtile tileid="335" wangid="0,17,0,0,0,0,0,0"/>
+    <wangtile tileid="336" wangid="0,17,0,0,0,0,0,17"/>
+    <wangtile tileid="337" wangid="0,0,0,0,0,0,0,17"/>
+    <wangtile tileid="338" wangid="0,19,0,0,0,0,0,0"/>
+    <wangtile tileid="339" wangid="0,19,0,0,0,0,0,19"/>
+    <wangtile tileid="340" wangid="0,0,0,0,0,0,0,19"/>
+    <wangtile tileid="341" wangid="0,20,0,0,0,0,0,0"/>
+    <wangtile tileid="342" wangid="0,20,0,0,0,0,0,20"/>
+    <wangtile tileid="343" wangid="0,0,0,0,0,0,0,20"/>
+    <wangtile tileid="352" wangid="0,13,0,13,0,13,0,13"/>
+    <wangtile tileid="353" wangid="0,13,0,13,0,13,0,13"/>
+    <wangtile tileid="354" wangid="0,13,0,13,0,13,0,13"/>
+    <wangtile tileid="358" wangid="0,14,0,14,0,14,0,14"/>
+    <wangtile tileid="359" wangid="0,14,0,14,0,14,0,14"/>
+    <wangtile tileid="360" wangid="0,14,0,14,0,14,0,14"/>
+    <wangtile tileid="370" wangid="0,19,0,19,0,19,0,19"/>
+    <wangtile tileid="371" wangid="0,19,0,19,0,19,0,19"/>
+    <wangtile tileid="372" wangid="0,19,0,19,0,19,0,19"/>
+    <wangtile tileid="385" wangid="0,27,0,0,0,27,0,27"/>
+    <wangtile tileid="386" wangid="0,27,0,27,0,0,0,27"/>
+    <wangtile tileid="388" wangid="0,26,0,0,0,26,0,26"/>
+    <wangtile tileid="389" wangid="0,26,0,26,0,0,0,26"/>
+    <wangtile tileid="395" wangid="0,25,0,0,0,25,0,25"/>
+    <wangtile tileid="396" wangid="0,25,0,0,0,0,0,25"/>
+    <wangtile tileid="397" wangid="0,25,0,25,0,0,0,25"/>
+    <wangtile tileid="398" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="400" wangid="0,24,0,0,0,24,0,24"/>
+    <wangtile tileid="401" wangid="0,24,0,24,0,0,0,24"/>
+    <wangtile tileid="403" wangid="0,21,0,0,0,21,0,21"/>
+    <wangtile tileid="404" wangid="0,21,0,21,0,0,0,21"/>
+    <wangtile tileid="406" wangid="0,23,0,0,0,23,0,23"/>
+    <wangtile tileid="407" wangid="0,23,0,23,0,0,0,23"/>
+    <wangtile tileid="417" wangid="0,0,0,27,0,27,0,27"/>
+    <wangtile tileid="418" wangid="0,27,0,27,0,27,0,0"/>
+    <wangtile tileid="420" wangid="0,0,0,26,0,26,0,26"/>
+    <wangtile tileid="421" wangid="0,26,0,26,0,26,0,0"/>
+    <wangtile tileid="427" wangid="0,0,0,0,0,25,0,25"/>
+    <wangtile tileid="429" wangid="0,25,0,25,0,0,0,0"/>
+    <wangtile tileid="430" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="432" wangid="0,0,0,24,0,24,0,24"/>
+    <wangtile tileid="433" wangid="0,24,0,24,0,24,0,0"/>
+    <wangtile tileid="435" wangid="0,0,0,21,0,21,0,21"/>
+    <wangtile tileid="436" wangid="0,21,0,21,0,21,0,0"/>
+    <wangtile tileid="438" wangid="0,0,0,23,0,23,0,23"/>
+    <wangtile tileid="439" wangid="0,23,0,23,0,23,0,0"/>
+    <wangtile tileid="448" wangid="0,0,0,27,0,0,0,0"/>
+    <wangtile tileid="449" wangid="0,0,0,27,0,27,0,0"/>
+    <wangtile tileid="450" wangid="0,0,0,0,0,27,0,0"/>
+    <wangtile tileid="451" wangid="0,0,0,26,0,0,0,0"/>
+    <wangtile tileid="452" wangid="0,0,0,26,0,26,0,0"/>
+    <wangtile tileid="453" wangid="0,0,0,0,0,26,0,0"/>
+    <wangtile tileid="459" wangid="0,0,0,25,0,25,0,25"/>
+    <wangtile tileid="460" wangid="0,0,0,25,0,25,0,0"/>
+    <wangtile tileid="461" wangid="0,25,0,25,0,25,0,0"/>
+    <wangtile tileid="462" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="463" wangid="0,0,0,24,0,0,0,0"/>
+    <wangtile tileid="464" wangid="0,0,0,24,0,24,0,0"/>
+    <wangtile tileid="465" wangid="0,0,0,0,0,24,0,0"/>
+    <wangtile tileid="466" wangid="0,0,0,21,0,0,0,0"/>
+    <wangtile tileid="467" wangid="0,0,0,21,0,21,0,0"/>
+    <wangtile tileid="468" wangid="0,0,0,0,0,21,0,0"/>
+    <wangtile tileid="469" wangid="0,0,0,23,0,0,0,0"/>
+    <wangtile tileid="470" wangid="0,0,0,23,0,23,0,0"/>
+    <wangtile tileid="471" wangid="0,0,0,0,0,23,0,0"/>
+    <wangtile tileid="480" wangid="0,27,0,27,0,0,0,0"/>
+    <wangtile tileid="482" wangid="0,0,0,0,0,27,0,27"/>
+    <wangtile tileid="483" wangid="0,26,0,26,0,0,0,0"/>
+    <wangtile tileid="484" wangid="0,26,0,26,0,26,0,26"/>
+    <wangtile tileid="485" wangid="0,0,0,0,0,26,0,26"/>
+    <wangtile tileid="491" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="492" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="493" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="494" wangid="0,25,0,25,0,25,0,25"/>
+    <wangtile tileid="495" wangid="0,24,0,24,0,0,0,0"/>
+    <wangtile tileid="496" wangid="0,24,0,24,0,24,0,24"/>
+    <wangtile tileid="497" wangid="0,0,0,0,0,24,0,24"/>
+    <wangtile tileid="498" wangid="0,21,0,21,0,0,0,0"/>
+    <wangtile tileid="499" wangid="0,21,0,21,0,21,0,21"/>
+    <wangtile tileid="500" wangid="0,0,0,0,0,21,0,21"/>
+    <wangtile tileid="501" wangid="0,23,0,23,0,0,0,0"/>
+    <wangtile tileid="502" wangid="0,23,0,23,0,23,0,23"/>
+    <wangtile tileid="503" wangid="0,0,0,0,0,23,0,23"/>
+    <wangtile tileid="504" wangid="0,10,0,11,0,10,0,10"/>
+    <wangtile tileid="505" wangid="0,10,0,11,0,11,0,10"/>
+    <wangtile tileid="506" wangid="0,10,0,10,0,11,0,10"/>
+    <wangtile tileid="507" wangid="0,11,0,10,0,11,0,11"/>
+    <wangtile tileid="508" wangid="0,11,0,11,0,10,0,11"/>
+    <wangtile tileid="512" wangid="0,27,0,0,0,0,0,0"/>
+    <wangtile tileid="513" wangid="0,27,0,0,0,0,0,27"/>
+    <wangtile tileid="514" wangid="0,0,0,0,0,0,0,27"/>
+    <wangtile tileid="515" wangid="0,26,0,0,0,0,0,0"/>
+    <wangtile tileid="516" wangid="0,26,0,0,0,0,0,26"/>
+    <wangtile tileid="517" wangid="0,0,0,0,0,0,0,26"/>
+    <wangtile tileid="524" wangid="0,0,0,25,0,0,0,0"/>
+    <wangtile tileid="525" wangid="0,0,0,0,0,25,0,0"/>
+    <wangtile tileid="527" wangid="0,24,0,0,0,0,0,0"/>
+    <wangtile tileid="528" wangid="0,24,0,0,0,0,0,24"/>
+    <wangtile tileid="529" wangid="0,0,0,0,0,0,0,24"/>
+    <wangtile tileid="530" wangid="0,21,0,0,0,0,0,0"/>
+    <wangtile tileid="531" wangid="0,21,0,0,0,0,0,21"/>
+    <wangtile tileid="532" wangid="0,0,0,0,0,0,0,21"/>
+    <wangtile tileid="533" wangid="0,23,0,0,0,0,0,0"/>
+    <wangtile tileid="534" wangid="0,23,0,0,0,0,0,23"/>
+    <wangtile tileid="535" wangid="0,0,0,0,0,0,0,23"/>
+    <wangtile tileid="536" wangid="0,11,0,11,0,10,0,10"/>
+    <wangtile tileid="537" wangid="0,11,0,11,0,11,0,11"/>
+    <wangtile tileid="538" wangid="0,10,0,10,0,11,0,11"/>
+    <wangtile tileid="539" wangid="0,10,0,11,0,11,0,11"/>
+    <wangtile tileid="540" wangid="0,11,0,11,0,11,0,10"/>
+    <wangtile tileid="544" wangid="0,27,0,27,0,27,0,27"/>
+    <wangtile tileid="545" wangid="0,27,0,27,0,27,0,27"/>
+    <wangtile tileid="546" wangid="0,27,0,27,0,27,0,27"/>
+    <wangtile tileid="547" wangid="0,26,0,26,0,26,0,26"/>
+    <wangtile tileid="548" wangid="0,26,0,26,0,26,0,26"/>
+    <wangtile tileid="549" wangid="0,26,0,26,0,26,0,26"/>
+    <wangtile tileid="556" wangid="0,25,0,0,0,0,0,0"/>
+    <wangtile tileid="557" wangid="0,0,0,0,0,0,0,25"/>
+    <wangtile tileid="559" wangid="0,24,0,24,0,24,0,24"/>
+    <wangtile tileid="560" wangid="0,24,0,24,0,24,0,24"/>
+    <wangtile tileid="561" wangid="0,24,0,24,0,24,0,24"/>
+    <wangtile tileid="562" wangid="0,21,0,21,0,21,0,21"/>
+    <wangtile tileid="563" wangid="0,21,0,21,0,21,0,21"/>
+    <wangtile tileid="564" wangid="0,21,0,21,0,21,0,21"/>
+    <wangtile tileid="566" wangid="0,22,0,0,0,22,0,22"/>
+    <wangtile tileid="567" wangid="0,22,0,22,0,0,0,22"/>
+    <wangtile tileid="568" wangid="0,11,0,10,0,10,0,10"/>
+    <wangtile tileid="569" wangid="0,11,0,10,0,10,0,11"/>
+    <wangtile tileid="570" wangid="0,10,0,10,0,10,0,11"/>
+    <wangtile tileid="571" wangid="0,11,0,11,0,11,0,11"/>
+    <wangtile tileid="572" wangid="0,11,0,11,0,11,0,11"/>
+    <wangtile tileid="580" wangid="0,18,0,0,0,18,0,18"/>
+    <wangtile tileid="581" wangid="0,18,0,18,0,0,0,18"/>
+    <wangtile tileid="598" wangid="0,0,0,22,0,22,0,22"/>
+    <wangtile tileid="599" wangid="0,22,0,22,0,22,0,0"/>
+    <wangtile tileid="600" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="601" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="602" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="603" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="604" wangid="0,10,0,10,0,10,0,10"/>
+    <wangtile tileid="612" wangid="0,0,0,18,0,18,0,18"/>
+    <wangtile tileid="613" wangid="0,18,0,18,0,18,0,0"/>
+    <wangtile tileid="629" wangid="0,0,0,22,0,0,0,0"/>
+    <wangtile tileid="630" wangid="0,0,0,22,0,22,0,0"/>
+    <wangtile tileid="631" wangid="0,0,0,0,0,22,0,0"/>
+    <wangtile tileid="643" wangid="0,0,0,18,0,0,0,0"/>
+    <wangtile tileid="644" wangid="0,0,0,18,0,18,0,0"/>
+    <wangtile tileid="645" wangid="0,0,0,0,0,18,0,0"/>
+    <wangtile tileid="661" wangid="0,22,0,22,0,0,0,0"/>
+    <wangtile tileid="662" wangid="0,22,0,22,0,22,0,22"/>
+    <wangtile tileid="663" wangid="0,0,0,0,0,22,0,22"/>
+    <wangtile tileid="675" wangid="0,18,0,18,0,0,0,0"/>
+    <wangtile tileid="676" wangid="0,18,0,18,0,18,0,18"/>
+    <wangtile tileid="677" wangid="0,0,0,0,0,18,0,18"/>
+    <wangtile tileid="693" wangid="0,22,0,0,0,0,0,0"/>
+    <wangtile tileid="694" wangid="0,22,0,0,0,0,0,22"/>
+    <wangtile tileid="695" wangid="0,0,0,0,0,0,0,22"/>
+    <wangtile tileid="707" wangid="0,18,0,0,0,0,0,0"/>
+    <wangtile tileid="708" wangid="0,18,0,0,0,0,0,18"/>
+    <wangtile tileid="709" wangid="0,0,0,0,0,0,0,18"/>
+   </wangset>
+  </wangsets>
+ </tileset>
+ <imagelayer id="65" name="background">
+  <image source="src/chalet-alps-background.jpg" width="1600" height="512"/>
+ </imagelayer>
+ <layer id="6" name="start" width="50" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="7" name="collisions" width="50" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,0,3,3,0,0,0,3,0,0,0,0,0,0,3,0,3,0,0,
+0,3,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,3,0,0,0,0,0,0,3,3,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,3,3,3,3,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,0,0,3,3,3,3,0,0,0,0,0,0,0,3,3,0,0,3,3,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <group id="55" name="floor" visible="0">
+  <layer id="63" name="white" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+2147,2148,2147,2148,2148,2148,2146,2148,2146,2148,2147,2146,2148,2148,2147,2148,2146,2146,2146,2148,2148,2147,2147,2147,2148,2148,2146,2147,2147,2147,2148,2146,2147,2147,2147,2148,2148,2148,2146,2146,2148,2147,2146,2148,2146,2147,2148,2148,2148,2147,
+2146,2148,2148,2146,2148,2148,2146,2146,2146,2147,2146,2147,2148,2146,2146,2148,2146,2147,2147,2148,2148,2147,2148,2146,2148,2148,2147,2148,2146,2147,2148,2147,2148,2146,2148,2146,2146,2146,2148,2146,2146,2146,2147,2147,2148,2148,2148,2148,2148,2147,
+2148,2148,2147,2147,2146,2147,2146,2147,2146,2148,2148,2147,2147,2147,2146,2148,2146,2146,2146,2147,2146,2146,2147,2147,2147,2146,2147,2148,2146,2148,2148,2147,2146,2147,2146,2146,2147,2147,2146,2148,2146,2146,2146,2148,2147,2147,2148,2148,2146,2147,
+2148,2146,2147,2146,2148,2147,2147,2148,2147,2147,2147,2146,2146,2146,2148,2146,2147,2147,2148,2147,2146,2148,2147,2148,2147,2147,2148,2147,2147,2148,2148,2148,2147,2146,2147,2147,2146,2148,2147,2148,2148,2146,2148,2147,2148,2148,2146,2147,2148,2147,
+2146,2148,2147,2148,2147,2147,2147,2146,2148,2147,2146,2147,2147,2148,2147,2146,2146,2146,2148,2148,2147,2147,2146,2146,2148,2148,2146,2148,2146,2147,2147,2148,2147,2146,2146,2148,2146,2147,2147,2148,2148,2147,2148,2147,2147,2147,2148,2146,2148,2148,
+2146,2146,2146,2148,2146,2146,2147,2147,2146,2147,2146,2148,2147,2147,2148,2146,2147,2146,2146,2148,2148,2146,2146,2148,2148,2148,2146,2148,2146,2147,2146,2148,2148,2148,2146,2147,2147,2148,2148,2146,2148,2146,2147,2146,2147,2146,2146,2146,2148,2146,
+2148,2146,2146,2146,2147,2148,2146,2146,2146,2148,2148,2147,2146,2147,2146,2148,2146,2147,2147,2146,2147,2146,2147,2146,2146,2147,2146,2148,2148,2146,2148,2147,2148,2147,2146,2148,2148,2148,2148,2146,2146,2146,2148,2148,2148,2148,2146,2146,2148,2148,
+2146,2147,2147,2148,2148,2146,2147,2146,2146,2147,2146,2146,2146,2148,2148,2146,2148,2146,2146,2147,2148,2147,2148,2146,2146,2148,2147,2147,2148,2147,2147,2148,2147,2148,2147,2148,2147,2147,2146,2148,2146,2146,2148,2147,2147,2148,2147,2148,2148,2148,
+2147,2147,2147,2148,2147,2148,2146,2148,2146,2147,2148,2148,2147,2147,2146,2147,2148,2146,2146,2146,2147,2148,2146,2146,2147,2147,2148,2147,2148,2147,2146,2147,2147,2146,2146,2147,2147,2146,2147,2147,2147,2146,2146,2148,2148,2146,2146,2147,2148,2147,
+2148,2147,2146,2146,2148,2147,2147,2148,2148,2147,2148,2146,2148,2148,2148,2146,2147,2148,2147,2146,2148,2146,2147,2147,2148,2147,2147,2147,2147,2146,2147,2146,2148,2146,2147,2148,2148,2147,2148,2146,2146,2148,2148,2147,2146,2148,2146,2146,2148,2147,
+2148,2146,2148,2147,2148,2146,2146,2148,2148,2146,2146,2147,2147,2146,2146,2146,2148,2147,2148,2147,2148,2148,2147,2148,2146,2146,2147,2146,2148,2147,2147,2146,2146,2147,2148,2147,2146,2148,2148,2148,2146,2148,2147,2148,2148,2147,2147,2147,2146,2146,
+2148,2147,2148,2147,2147,2146,2146,2147,2148,2147,2146,2148,2147,2146,2146,2147,2146,2147,2148,2147,2146,2146,2147,2146,2148,2148,2148,2148,2146,2147,2146,2146,2148,2146,2146,2148,2148,2148,2148,2148,2148,2147,2146,2146,2146,2147,2146,2146,2147,2147,
+2146,2146,2148,2147,2148,2148,2148,2148,2147,2148,2146,2147,2148,2147,2146,2146,2148,2147,2147,2146,2148,2148,2148,2146,2148,2146,2146,2146,2147,2147,2146,2146,2147,2147,2148,2148,2147,2146,2147,2148,2148,2147,2147,2148,2146,2147,2148,2148,2146,2147,
+2146,2148,2147,2147,2148,2146,2148,2147,2147,2148,2148,2146,2148,2146,2147,2147,2147,2146,2148,2146,2146,2148,2148,2146,2147,2147,2146,2148,2146,2147,2147,2148,2147,2146,2146,2148,2147,2147,2146,2146,2146,2146,2148,2148,2147,2146,2147,2147,2146,2147
+</data>
+  </layer>
+  <layer id="66" name="snow" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2052,0,0,0,0,0,
+2052,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2051,2020,2147,2019,2052,0,0,0,0,
+2019,2052,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2051,2051,2052,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2020,2146,2083,2146,2083,1987,2116,0,0,0,0,
+2083,2019,2052,0,0,0,0,0,0,0,0,0,2050,2020,2146,2148,2146,2019,2051,2052,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2114,1988,2083,2147,2083,1987,2115,2116,0,0,0,0,0,
+2083,2147,2019,2051,2052,0,0,0,0,0,0,0,2082,2083,2147,2148,2147,2146,2083,2084,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2051,2052,2114,2115,1988,2083,2084,0,0,0,0,0,0,0,
+2146,2146,2146,2146,2019,2052,0,0,0,0,0,0,2082,2083,2146,2083,2148,2083,2148,2019,2052,0,0,0,0,0,0,0,0,0,0,0,0,2050,2020,2083,2147,2019,2052,0,2114,2115,2116,0,0,0,0,0,0,0,
+2083,2148,2148,2083,1987,2116,0,0,0,0,0,2050,2020,2146,2083,1987,2115,2115,2115,2115,2116,0,0,0,0,0,0,0,0,0,0,0,2050,2020,2083,2083,2083,2148,2084,0,0,0,0,0,0,0,0,0,0,0,
+2083,2147,2083,2146,2019,2051,2052,0,0,0,0,2114,2115,2115,2115,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2082,2083,2083,2146,2083,2147,2084,0,0,0,0,0,0,0,0,0,0,0,
+2146,2146,2148,2148,2147,2083,2019,2052,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2020,2146,2083,2147,2147,1987,2116,0,0,0,0,0,0,0,0,0,0,0,
+2147,2147,2148,2147,2146,2146,1987,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2020,2146,2146,1987,2115,2115,2116,0,0,0,0,2050,2051,2051,2052,0,0,0,0,
+2147,2146,1987,2115,2115,2115,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2114,2115,2115,2115,2116,0,0,0,0,0,2050,2051,2020,2083,2148,2019,2051,2051,2052,0,
+2115,2115,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2051,2051,2051,2051,2051,2052,0,0,0,0,0,0,0,0,0,0,0,0,2050,2051,2020,2083,2083,2146,1987,1988,2147,2148,2084,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2114,2115,1988,2147,2147,2148,2147,2019,2051,2052,0,0,0,2050,2051,2051,2052,2050,2051,2051,2020,2147,2146,2083,2146,2148,2084,2082,1987,2115,2116,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2114,2115,2115,1988,2148,1987,1988,2019,2051,2051,2051,2020,1987,1988,2019,2020,2146,1987,2115,2115,2115,1988,2147,1987,2116,2114,2116,0,0,0
+</data>
+  </layer>
+  <layer id="4" name="floor1" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,1648,1649,1650,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1648,1618,1681,1617,1649,1649,1650,0,0,0,0,0,0,0,1648,1649,1649,1649,1649,1649,1649,1649,1649,1649,1649,1649,1650,0,0,0,0,0,0,0,208,208,208,208,208,208,0,0,0,0,0,
+0,0,0,0,1648,1618,1681,1681,1681,1681,1681,1682,0,0,0,0,0,0,0,1680,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1682,0,0,0,0,0,0,0,208,208,208,208,208,208,0,0,0,0,0,
+0,0,0,0,1680,1681,1681,1681,1681,1681,1681,1617,1650,0,0,0,0,0,0,1680,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1682,0,0,0,0,0,0,0,208,208,208,208,208,208,0,0,0,0,0,
+0,0,0,1648,1618,1681,1681,1681,1681,1681,1681,1681,1682,0,0,0,0,0,0,1680,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1682,0,0,0,0,0,0,0,208,208,208,208,208,208,0,0,0,0,0,
+0,0,1648,1618,1681,1681,1681,1681,1585,1713,1713,1713,1714,0,0,0,0,0,0,1680,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1681,1682,0,0,0,0,0,0,0,208,208,208,208,208,208,0,0,0,0,0,
+0,0,1712,1586,1681,1585,1586,1585,1714,1858,1859,1860,0,0,0,0,0,0,0,1680,1681,1681,1681,1681,1681,1681,220,220,1681,1681,1681,1682,0,0,0,0,0,0,1683,208,208,208,208,208,208,1685,0,0,0,0,
+0,0,0,1712,1713,1714,1712,1714,1858,1828,1891,1892,2050,2052,0,0,0,0,0,1680,1681,1681,1681,1681,1681,1681,220,220,1681,1681,1681,1682,0,0,0,0,0,0,1683,208,208,208,208,208,208,1685,0,0,0,0,
+0,0,0,0,0,0,0,0,1890,1954,1795,1924,2082,2084,0,0,0,0,0,1712,1713,1713,1713,1713,1713,1713,1713,1713,1713,1713,1713,1714,0,0,0,0,0,0,1715,1716,1716,1716,1716,1716,1716,1717,0,0,0,0,
+0,0,0,0,0,0,0,0,1922,1923,1924,0,2082,2084,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,2050,2051,2052,0,0,2082,2084,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,2114,1988,2019,2051,2051,2020,2084,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,2114,1988,2147,1987,2115,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,2114,2115,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="57" name="floor2" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,2039,2007,2038,2007,2006,2007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,137,136,140,141,135,138,0,0,0,0,0,
+0,0,0,0,0,2039,2007,2038,2007,2006,2007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,149,148,135,150,147,136,0,0,0,0,0,
+0,0,0,0,0,2038,2007,2038,2007,2039,2007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1332,161,162,161,162,161,162,0,0,0,0,0,
+0,0,0,0,0,2038,2007,2038,2007,2039,2007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,2006,2007,2039,2007,2038,2007,1682,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,1713,1713,1713,1714,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,2047,2049,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,2079,2016,2048,2049,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,231,231,232,232,231,231,0,0,0,0,0,
+0,0,0,0,0,0,0,0,2047,2017,2080,2143,2081,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,2079,2080,2080,1984,2113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1371,1550,1554,1554,1554,1554,1554,1551,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,2111,1985,2144,2081,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1556,0,0,0,0,0,1557,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,2111,2112,2113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1556,0,0,0,0,0,1557,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1553,1555,1555,1555,1555,1555,1552,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+ <group id="54" name="walls">
+  <layer id="9" name="walls1" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,254,246,246,246,246,246,246,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,2204,258,258,258,258,258,258,2204,0,0,0,0,0,0,0,254,246,246,246,246,246,246,246,246,246,246,246,247,0,0,0,0,0,243,244,174,174,174,174,174,174,217,218,0,0,0,
+0,0,0,0,2068,258,258,258,258,258,258,2068,0,0,2189,2062,2222,2094,0,266,258,258,258,258,258,258,258,258,258,258,258,259,0,2223,2062,2221,2222,255,256,257,257,257,257,257,257,229,230,2223,2221,0,
+0,2093,2094,0,2068,0,0,0,0,0,0,2068,0,2094,0,0,0,0,0,266,1194,1194,1194,1194,1194,1194,1194,1194,1194,1194,1194,259,2221,0,0,0,0,255,256,269,269,269,269,269,269,229,230,0,0,2221,
+2221,0,0,0,2068,0,0,0,0,0,0,2068,2093,0,0,0,0,0,0,266,0,0,0,46,47,47,48,0,0,0,0,259,0,0,0,0,0,255,256,0,0,0,0,0,0,229,230,0,0,0,
+0,0,0,0,2068,0,0,0,0,0,0,2068,0,0,0,0,0,0,0,266,0,0,0,56,57,57,58,0,0,0,0,259,0,0,0,0,2094,255,256,0,0,0,0,0,0,229,230,0,0,0,
+0,0,0,0,2204,0,0,0,0,0,0,2204,0,0,0,0,0,0,0,266,0,0,0,66,67,67,68,0,0,0,0,259,0,0,0,0,0,255,256,0,0,0,0,0,0,229,230,0,0,0,
+0,0,0,0,2099,0,0,0,0,0,0,2101,0,0,0,0,0,0,0,278,0,0,0,0,0,0,0,0,0,0,0,271,2093,0,0,0,0,267,268,0,0,0,0,0,0,241,242,0,0,0,
+0,0,0,0,1288,1219,1219,1219,1219,1219,1219,1289,0,0,0,0,0,0,0,1193,0,0,0,0,0,0,0,0,0,0,0,1195,0,0,0,0,0,0,265,1219,1219,0,0,1219,1219,260,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1193,0,0,0,0,0,0,0,0,0,0,0,1195,0,0,0,0,0,0,277,0,0,0,0,0,0,272,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2093,0,0,0,
+0,2094,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2094,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2094,0,0
+</data>
+  </layer>
+  <layer id="68" name="trees" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,761,762,0,0,0,0,0,0,0,0,0,0,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,786,787,0,0,0,0,0,0,0,0,0,0,761,762,0,739,740,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,761,762,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,786,787,0,764,765,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,786,787,0,0,0,0,0,0,0,0,0,0,0,736,737,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,789,790,0,0,0,0,0,0,0,0,0,0,0,0,0,742,743,0,0,0,0,0,0,0,0,0,0,0,0,0,0,761,762,
+736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,767,768,0,0,0,0,0,0,0,0,0,0,0,0,0,0,786,787,
+761,762,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,792,793,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+786,787,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,736,737,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,761,762,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,761,762,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,786,787,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,786,787,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,739,740,0,0,0,761,762,0,0,0,0,0,739,740,0,0,0,0,0,0,0,0,0,0,0,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,736,737,0,0,742,743,764,765,0,0,0,786,787,0,742,743,0,0,764,765,0,0,0,0,0,742,743,0,0,0,0,761,762,736,737,0,0,0,0,0,0,0,0,0,0,0,0,0,
+742,743,761,762,0,0,767,768,789,790,0,0,0,0,0,0,767,768,0,0,789,790,0,0,736,737,0,767,768,0,0,739,740,786,787,761,762,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+ <group id="52" name="furniture" visible="0">
+  <layer id="44" name="furniture1" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,145,145,146,146,0,172,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,157,157,158,158,191,174,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,169,169,170,170,0,186,0,0,0,0,0,0,0,0,0,0,1329,0,1353,0,1367,0,1327,0,1324,437,0,0,0,0,0,0,0,0,0,0,0,0,0,72,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1018,430,0,0,0,0,0,0,0,0,450,0,0,0,0,0,0,0,0,72,0,0,91,108,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,425,0,0,109,118,117,0,0,0,0,426,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,438,0,0,0,0,0,0,0,0,0,439,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,940,0,0,0,0,941,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,0,0,0,0,0,0,0,0,1068,0,0,0,0,967,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1068,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+ <objectgroup id="2" name="floorLayer">
+  <object id="12" name="clockPopup" x="835.919" y="302.027" width="93.7162" height="61.6673"/>
+  <object id="13" name="jitsiChillZone" type="area" x="160" y="482.33" width="192" height="222.667">
+   <properties>
+    <property name="focusable" type="bool" value="true"/>
+    <property name="jitsiRoom" value="ChillZone"/>
+    <property name="jitsiTrigger" value="onaction"/>
+    <property name="zoom_margin" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="14" name="silentZone" type="area" x="992" y="832" width="224" height="128">
+   <properties>
+    <property name="silent" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="16" name="jitsiMeetingRoom" type="area" x="1246" y="545" width="192" height="224">
+   <properties>
+    <property name="focusable" type="bool" value="true"/>
+    <property name="jitsiRoom" value="MeetingRoom"/>
+    <property name="jitsiTrigger" value="onaction"/>
+    <property name="zoom_margin" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="17" name="clock" type="area" x="790.485" y="384.333" width="50.2727" height="39.697"/>
+  <object id="21" name="apertus" type="area" x="728" y="593.333" width="128" height="73.3333">
+   <properties>
+    <property name="openWebsite" value="https://publicai.co/chat"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <group id="51" name="above">
+  <layer id="3" name="above1" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,246,246,246,246,246,246,246,246,246,246,246,0,0,0,0,0,0,0,0,246,246,246,246,246,246,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1194,264,1194,1195,0,0,260,1193,1194,264,1194,0,0,0,0,0,0,0,0,1194,1194,260,265,1194,1194,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1194,1194,1194,1195,0,0,260,1193,1194,1194,1194,0,0,0,0,0,0,0,0,1194,1194,272,277,1194,1194,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="67" name="above2" width="50" height="30">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,59,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,1120,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+</map>

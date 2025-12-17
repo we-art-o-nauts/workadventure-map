@@ -86,6 +86,9 @@
         "map.json#WA_User_Interface": {
             "scaleInDock": 1
         },
+        "map.tmx#WA_Miscellaneous": {
+            "scaleInEditor": 1
+        },
         "office.tmj": {
             "scale": 0.6100302419354838,
             "selectedLayer": 0,
@@ -173,11 +176,17 @@
         "src/Winter.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "src/assets/LPC_Terrain/Terrain.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         }
     },
+    "last.exportedFilePath": "/home/oleg/Localdev/Game/workadventure-map",
     "last.externalTilesetPath": "/home/oleg/Localdev/Game/workadventure-map/src/assets/LPC_Terrain",
-    "last.imagePath": "/home/oleg/Localdev/Game/workadventure-map/src/assets",
-    "map.lastUsedFormat": "json",
+    "last.imagePath": "/home/oleg/Localdev/Game/workadventure-map/src/assets/LPC_Terrain",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
     "openFiles": [
         "map.json",
         "spiu.tmj",
@@ -185,6 +194,7 @@
     ],
     "project": "spiu.tiled-project",
     "recentFiles": [
+        "src/assets/LPC_Terrain/Terrain.tsx",
         "src/Winter.tsx",
         "src/Pixel 16 v2 village free.tsx",
         "src/Christmas_Free_stuff.tsx",
