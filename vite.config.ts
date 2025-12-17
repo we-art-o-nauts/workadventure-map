@@ -36,7 +36,7 @@ export default defineConfig({
     server: {
         host: "0.0.0.0",
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://play.workadventu.re",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
             "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
             "Cache-Control": "no-cache, no-store, must-revalidate",

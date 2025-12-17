@@ -184,7 +184,7 @@
     },
     "last.exportedFilePath": "/home/oleg/Localdev/Game/workadventure-map",
     "last.externalTilesetPath": "/home/oleg/Localdev/Game/workadventure-map/src/assets/LPC_Terrain",
-    "last.imagePath": "/home/oleg/Localdev/Game/workadventure-map/src/assets/LPC_Terrain",
+    "last.imagePath": "/home/oleg/Localdev/Game/workadventure-map/public",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "openFiles": [
@@ -202,6 +202,7 @@
         "conference.tmj",
         "spiu.tmj"
     ],
+    "tileset.embedInMap": true,
     "tileset.lastUsedFilter": "All Files (*)",
     "tileset.lastUsedFormat": "tsx"
 }
