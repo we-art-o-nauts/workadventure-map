@@ -7,7 +7,7 @@
         <link href="https://unpkg.com/nes.css@2/css/nes.min.css" rel="stylesheet" />
         <style>
 	    body {
-		background: url(IMG_20210821_095822.jpg) no-repeat center;
+		background: #fff url() no-repeat center;
 		background-size: cover;
 	    }
             .useful-width{
@@ -28,15 +28,9 @@
                     path = path.substr(path, path.length - 'index.html'.length);
                 }
 
-/*
                 const instanceId = '3098'; 
                 const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}map.json`;
                 document.getElementById('mapLink').href = url;
-
-		*/
-                const mapUrl = window.location.protocol+'//'+window.location.host+path+'map.json';
-                document.getElementById('mapLink').href = mapUrl;
-
 
             };
         </script>
@@ -45,10 +39,12 @@
     <div class="useful-width">
         <div class="nes-container with-title is-centered" style="margin-top: 3rem">
             <p>
-                <h2>Code-Welt für Buchsee F1</h2>
-                Hier befinden sich virtuelle Umgebungen für <a href="https://workadventu.re">Workadventu.re</a>,
-                gestaltet und gepflegt von <a href="mailto:oleg@schoolofdata.ch">Oleg &amp; Sascha</a>.
-                Eine kurze Anleitung steht unten. Bitte meldet euch bei Fragen.
+                <h2>Welcome visitor!</h2>
+                This is a virtual watercooler powered by
+              <a href="https://workadventu.re">Workadventu.re</a>,
+                designed and operated by 
+        <a href="mailto:oleg@utou.ch">Oleg</a>.
+                There is a short guidance below - please contact me if you have any questions.
             </p>
         </div>
         <div class="nes-container with-title is-centered" style="margin-top: 1rem">
@@ -57,7 +53,7 @@
                 Lesen Sie bitte sorgfältig die Bestimmungen zum 
                 <a href="https://workadventu.re/privacy-policy" target="_blank">Datenschutz</a> 
                 und weitere <a href="https://workadventu.re/terms-of-use" target="_blank">Konditionen</a>
-                der Firma aus Frankreich. Workadventu.re ist kostenlos, braucht keine Kontoangabe, und die Daten werden nur direkt an andere Benutzer*innen übermittelt. Aber ein öffentlicher Internetdienst kommt immer mit gewissen Risiken und Verantwortlichkeiten.
+                der Firma aus Frankreich. 
             </p>
             <p><a id="mapLink" href="" class="nes-btn is-primary">Metaverse Starten</a></p>
         </div>
@@ -77,6 +73,7 @@
 
 	    <div class="nes-container" style="margin-top:1rem">
             <center><h2>Kurzanleitung</h2></center>
+            <p>Workadventu.re ist kostenlos, braucht keine Kontoangabe, und die Daten werden nur direkt an andere Benutzer*innen übermittelt. Aber ein öffentlicher Internetdienst kommt immer mit gewissen Risiken und Verantwortlichkeiten.</p>
             <b>Der Anfang</b>
             <p>Wenn ihr die Website über den Link aufruft, werdet ihr aufgefordert, euren Namen einzugeben (eure Vornamen oder Spitzname) und eine Spielfigur auszuwählen. Beide Aktionen müssen durch Drücken der Enter-Taste (↵) bestätigt werden.</p>
             <p>Ihr werdet als Nächstes aufgefordert, die Berechtigung für die Nutzung eures Webcams und Mikrofons zu erteilen - diese ist natürlich optional!</p>
