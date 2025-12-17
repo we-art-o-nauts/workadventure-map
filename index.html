@@ -7,7 +7,7 @@
         <link href="https://unpkg.com/nes.css@2/css/nes.min.css" rel="stylesheet" />
         <style>
 	    body {
-		background: #fff url() no-repeat center;
+		background: #fff url(chalet-alps-background.webp) no-repeat center;
 		background-size: cover;
 	    }
             .useful-width{
@@ -19,6 +19,7 @@
 	    .nes-container {
 		background-color: white;
             }
+    .hidden { display: none; }
         </style>
         <script>
             window.onload = function() {
@@ -27,11 +28,12 @@
                 if (path.endsWith('index.html')) {
                     path = path.substr(path, path.length - 'index.html'.length);
                 }
+                
+                const instanceId = '591270218371283'; 
+                //const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}map.json`;
+                const url = 'https://play.workadventu.re/@/koniz/spiu/chalet';
 
-                const instanceId = '3098'; 
-                const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}map.json`;
                 document.getElementById('mapLink').href = url;
-
             };
         </script>
     </head>
@@ -48,17 +50,17 @@
             </p>
         </div>
         <div class="nes-container with-title is-centered" style="margin-top: 1rem">
-            <p class="title">INSERT COIN</p>
+            <p class="title">T&amp;C's</p>
             <p>
                 Lesen Sie bitte sorgfältig die Bestimmungen zum 
                 <a href="https://workadventu.re/privacy-policy" target="_blank">Datenschutz</a> 
                 und weitere <a href="https://workadventu.re/terms-of-use" target="_blank">Konditionen</a>
                 der Firma aus Frankreich. 
             </p>
-            <p><a id="mapLink" href="" class="nes-btn is-primary">Metaverse Starten</a></p>
+            <p><a id="mapLink" href="" class="nes-btn is-primary">INSERT COIN</a></p>
         </div>
             
-        <div class="nes-container with-title is-centered" style="margin-top: 1rem">
+        <div class="nes-container with-title is-centered hidden" style="margin-top: 1rem">
             <p class="title">Quellenangaben</p>
             <p>
                 Diese Karte war erstellt mit der Programm
